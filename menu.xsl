@@ -6,7 +6,7 @@
     <html xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xsl:version="1.0">
       <body style="font-family:Arial; font-size:12pt; background-color:#EEEEEE">
 
-        <h2 style="color:darkblue;">All Breakfast Items </h2>
+        <h2 style="color:darkblue;">All Breakfast Items</h2>
         <xsl:apply-templates select="breakfast_menu/food"/>
         
         <h2 style="color:darkgreen;">Foods Priced Over $5.00</h2>
@@ -18,8 +18,9 @@
 
       </body>
     </html>
-    
-   <xsl:template match="food">
+  </xsl:template>
+
+  <xsl:template match="food">
     <div style="background-color:teal; color:white; padding:4px; margin-top:10px">
       <span style="font-weight:bold">
         <xsl:value-of select="name"/> -
@@ -27,17 +28,14 @@
       <xsl:value-of select="price"/>
     </div>
 
-      <div style="background-color:#D8D8D8; color:black; padding:10px; margin-bottom:1em; width:100%; box-sizing:border-box;">
-          <p style="margin: 0;">
+    <div style="background-color:gray; margin-left:20px; margin-bottom:1em; font-size:10pt">
+      <p>
         <xsl:value-of select="description"/>
         <span style="font-style:italic">
           (<xsl:value-of select="calories"/> calories per serving)
         </span>
       </p>
     </div>
-   
   </xsl:template>
-
-
 
 </xsl:stylesheet>
